@@ -1,0 +1,259 @@
+--- a/app/src/main/res/values-zh-rCN/strings.xml
++++ b/app/src/main/res/values-zh-rCN/strings.xml
+@@ -29,8 +29,8 @@
+     <string name="action_closeNavDrawer">关闭导航</string>
+     <string name="action_clock">时钟</string>
+     <string name="action_lightGraphDialog">日光</string>
+-    <string name="action_lineGraph">海拔图</string>
+-    <string name="action_seekAltitude">查找海拔</string>        <!-- checkbox label -->
++    <string name="action_lineGraph">高度角图</string>
++    <string name="action_seekAltitude">跳转到太阳高度角</string>        <!-- checkbox label -->
+     <string name="action_search">搜索</string>        <!-- button (contentDescription) -->
+     <string name="action_deselect">清除选择</string>
+     <string name="action_moon">月亮</string>
+@@ -147,22 +147,22 @@
+     <!-- NoteBody: sunset/sunrise/twilight string
+          The note body text; appears next to the prefix (layout/info_time_note.xml)
+     -->
+-    <string name="until_astroTwilight">天文曙光</string>
+-    <string name="until_civilTwilight">民用曙光</string>
+-    <string name="until_nauticalTwilight">航海曙光</string>
++    <string name="until_astroTwilight">天文晨昏蒙影</string>
++    <string name="until_civilTwilight">民用晨昏蒙影</string>
++    <string name="until_nauticalTwilight">航海晨昏蒙影</string>
+     <string name="until_sunrise">日出</string>
+     <string name="until_noon">太阳正午</string>
+     <string name="until_sunset">日落</string>
+-    <string name="untilEnd_civilTwilight">民用暮光</string>
+-    <string name="untilEnd_nauticalTwilight">航海暮光</string>
+-    <string name="untilEnd_astroTwilight">天文暮光</string>
++    <string name="untilEnd_civilTwilight">民用晨昏蒙影</string>
++    <string name="untilEnd_nauticalTwilight">航海晨昏蒙影</string>
++    <string name="untilEnd_astroTwilight">天文晨昏蒙影</string>
+     <string name="until_goldhour">黄金时刻</string>
+     <string name="untilEnd_goldhour">黄金时刻</string>
+     <string name="until_bluehour">蓝色时刻</string>
+     <string name="untilEnd_bluehour">蓝色时刻</string>
+     <string name="until_moonrise">月出</string>
+     <string name="until_moonset">月落</string>
+-    <string name="until_moonnoon">月亮正午</string>
++    <string name="until_moonnoon">月球中天</string>
+     <string name="until_moonnight">月夜</string>
+ 
+     <!-- Table -->
+@@ -265,17 +265,17 @@
+ 
+     <!-- Widget Setting: general -->
+     <string name="settings_general">通用</string>                <!-- group title -->
+-    <string name="settings_general_calculator">日期来源:</string>         <!-- spinner label -->
++    <string name="settings_general_calculator">数据来源:</string>         <!-- spinner label -->
+     <string name="settings_general_calculator_sun">日光数据来源</string>         <!-- preference label -->
+     <string name="settings_general_calculator_moon">月光数据来源</string>         <!-- preference label -->
+     <string name="settings_general_calculator_help">数据来源</string>    <!-- preference title / help button text -->
+ 
+     <string name="settings_general_timeFormatMode">时间格式:</string>         <!-- spinner label -->
+ 
+-    <string name="settings_general_altitude_enabled">应用海拔</string>        <!-- checkbox label -->
+-    <string name="settings_general_altitude_enabled_summary">应用海拔以提高精度。</string>        <!-- checkbox label -->
++    <string name="settings_general_altitude_enabled">使用观测者海拔</string>        <!-- checkbox label -->
++    <string name="settings_general_altitude_enabled_summary">根据观测者海拔进行校正。</string>        <!-- checkbox label -->
+ 
+-    <string name="settings_general_localize_hemisphere">半球本地化</string>        <!-- checkbox label -->
++    <string name="settings_general_localize_hemisphere">按半球适配</string>        <!-- checkbox label -->
+     <string name="settings_general_localize_hemisphere_summary">应用基于半球的本地化 (季节标签、月相图标)。</string>        <!-- checkbox label -->
+ 
+     <string name="settings_general_lengthUnits">长度单位</string>        <!-- spinner label -->
+@@ -296,7 +296,7 @@
+     <string name="settings_general_showHours_summary">大于一天的时候包含小时和分钟。</string>    <!-- checkbox label -->
+ 
+     <string name="settings_general_observerheight">物体阴影</string>        <!-- checkbox label -->
+-    <string name="settings_general_observerheight_summary">显示高度为 <xliff:g example="1 meter" id="value">%1$s</xliff:g> 的物体投射的阴影长度。</string>        <!-- checkbox label -->
++    <string name="settings_general_observerheight_summary">显示高 %1$s 的物体投下的影子长度。</string>        <!-- checkbox label -->
+ 
+     <string name="settings_general_dayOffset">日偏移</string>        <!-- edittext label -->
+     <string name="settings_general_dayOffset_hint">0</string>             <!-- edittext hint -->
+@@ -326,7 +326,7 @@
+     <string name="settings_appearance">外观</string>           <!-- group title -->
+     <string name="settings_appearance_mode">外观</string>                  <!-- spinner label -->
+     <string name="settings_appearance_theme">主题:</string>                  <!-- spinner label -->
+-    <string name="settings_appearance_allowResize">交换布局以填充可用空间</string>  <!-- checkbox label -->
++    <string name="settings_appearance_allowResize">切换布局以填充可用空间</string>  <!-- checkbox label -->
+     <string name="settings_appearance_scaleText">缩放文本和图标</string>  <!-- checkbox label -->
+     <string name="settings_appearance_scaleBase">填充整个单元格</string>  <!-- checkbox label -->
+     <string name="settings_appearance_gravity">对齐底部:</string>  <!-- spinner label -->
+@@ -354,11 +354,11 @@
+     <string name="timeMode_official_short">实际</string>              <!-- setting -->
+     <string name="timeMode_official">实际时间</string>               <!-- setting -->
+     <string name="timeMode_civil_short">民用</string>                  <!-- setting -->
+-    <string name="timeMode_civil">民用曙暮光</string>               <!-- setting -->
++    <string name="timeMode_civil">民用晨昏蒙影</string>               <!-- setting -->
+     <string name="timeMode_nautical_short">航海</string>            <!-- setting -->
+-    <string name="timeMode_nautical">航海曙暮光</string>         <!-- setting -->
++    <string name="timeMode_nautical">航海晨昏蒙影</string>         <!-- setting -->
+     <string name="timeMode_astronomical_short">天文</string>    <!-- setting -->
+-    <string name="timeMode_astronomical">天文曙暮光</string> <!-- setting -->
++    <string name="timeMode_astronomical">天文晨昏蒙影</string> <!-- setting -->
+     <string name="timeMode_night">夜间</string>                   <!-- a label (not an actual timeMode setting) -->
+     <string name="timeMode_day">日间</string>                       <!-- a label (not an actual timeMode setting) -->
+     <string name="timeMode_golden_short">黄金</string>                <!-- setting -->
+@@ -449,9 +449,9 @@
+     <string name="widgetMode1x1_sunset">仅日落</string>               <!-- setting -->
+     <string name="widgetMode1x1_both_1">日出 &amp; 日落 (1)</string>  <!-- setting -->
+     <string name="widgetMode1x1_both_2">日出 &amp; 日落 (2)</string>  <!-- setting -->
+-    <string name="widgetMode3x1_sunrise_sunset_noon">日出，日落，和正午</string>  <!-- setting -->
++    <string name="widgetMode3x1_sunrise_sunset_noon">日出、日落和正午</string>  <!-- setting -->
+ 
+-    <string name="widgetMode1x1_altaz">海拔 &amp; 方位</string>     <!-- setting -->
++    <string name="widgetMode1x1_altaz">高度角与方位角</string>     <!-- setting -->
+     <string name="widgetMode1x1_decright">赤经 &amp; 赤纬</string>     <!-- setting -->
+     <string name="widgetMode1x1_distance">当前距离</string>     <!-- setting -->
+     <string name="widgetMode1x1_apsis">下一个远地点或近地点</string>     <!-- setting -->
+@@ -844,7 +844,7 @@
+ 
+     <string name="widgetLabel_azimuth">方位</string>                   <!-- label -->
+     <string name="widgetLabel_azimuth_short">方位</string>                   <!-- label -->
+-    <string name="widgetLabel_altitude">高度</string>               <!-- label -->
++    <string name="widgetLabel_altitude">高度角</string>               <!-- label -->
+     <string name="widgetLabel_altitude_short">高度</string>               <!-- label -->
+     <string name="widgetLabel_altitude_symbol">∠</string>               <!-- label/suffix -->
+ 
+@@ -873,7 +873,7 @@
+     <!--
+          CUSTOM EVENTS
+     -->
+-    <string name="eventType_sun_elevation">太阳 (海拔)</string>
++    <string name="eventType_sun_elevation">太阳（高度角）</string>
+     <string name="eventlist_dialog_title">自定义事件</string>
+ 
+     <string name="event_label_alarmitem">%1$s\n%2$s</string>   <!-- alarm (custom) event chip; e.g. title \n summary -->
+@@ -902,7 +902,7 @@
+     <string name="events_action_deleteEvent">删除</string>           <!-- button (contentDescription) -->
+     <string name="events_action_clearEvents">清空</string>           <!-- button (contentDescription) -->
+ 
+-    <string name="events_action_addEvent_sunEvent">添加 (太阳高度)</string>           <!-- button (contentDescription) -->
++    <string name="events_action_addEvent_sunEvent">添加（太阳高度角）</string>           <!-- button (contentDescription) -->
+     <string name="events_action_addEvent_shadowEvent">添加 (阴影长度)</string>           <!-- button (contentDescription) -->
+ 
+     <string name="events_action_importEvents">@string/action_import</string>           <!-- button (contentDescription) -->
+@@ -938,13 +938,17 @@
+ 
+     <string name="events_editevent_dialog_height">物体高度</string>
+     <string name="events_editevent_dialog_height_hint">1</string>
+-    <string name="events_editevent_dialog_height_error">物体高度必需！</string>
++    <string name="events_editevent_dialog_height_error">必须填写物体高度！</string>
+ 
+-    <string name="events_delevent_dialog_msg">您确定您想要删除 %1$s (%2$s)? 使用此事件的闹钟、通知或小部件将无法继续运作且需要被重新指派。</string>
++    <string name="events_delevent_dialog_msg">确定要删除 %1$s (%2$s)?
++
++正在使用此事件的闹钟、通知或小部件将无法继续工作，需要重新指定。</string>
+     <string name="events_delevent_dialog_ok">删除</string>
+     <string name="events_delevent_dialog_cancel">@string/dialog_cancel</string>
+ 
+-    <string name="events_clearevents_dialog_msg">您确定您想要清空自定义事件? 使用这些事件的闹钟、通知或小部件将无法继续运作且需要被重新指派。</string>
++    <string name="events_clearevents_dialog_msg">确定要清空自定义事件?
++
++正在使用这些事件的闹钟、通知或小部件将无法继续工作，需要重新指定。</string>
+     <string name="events_clearevents_dialog_ok">清空</string>
+     <string name="events_clearevents_dialog_cancel">@string/dialog_cancel</string>
+     <string name="events_clearevents_toast">已清空自定义事件。</string>
+@@ -1391,15 +1395,15 @@
+ 
+     <!-- App Setting: Show Lightmap -->
+     <string name="settings_ui_showLightmap">显示光照图</string>
+-    <string name="settings_ui_showLightmap_summary">显示一个含有白天，夜晚和曙暮光的柱状图。</string>
++    <string name="settings_ui_showLightmap_summary">显示白天、夜晚和晨昏蒙影的堆叠柱状图。</string>
+ 
+     <!-- App Setting: Show Moon -->
+     <string name="settings_ui_showmoon">显示月亮信息</string>
+     <string name="settings_ui_showmoon_summary">显示月出月落的时间，月相和月光饱满度。</string>
+ 
+     <!-- App Setting: Show Lunar Noon -->
+-    <string name="settings_ui_showmoon_noon">显示月亮正午</string>
+-    <string name="settings_ui_showmoon_noon_summary">在月亮对话框中显示月亮正午和月亮午夜。</string>
++    <string name="settings_ui_showmoon_noon">显示月球中天</string>
++    <string name="settings_ui_showmoon_noon_summary">在月亮对话框中显示月球中天和月球午夜。</string>
+ 
+     <!-- App Setting: Moon Phase Columns -->
+     <string name="settings_ui_showmoon_phase_columns">列 (相)</string>
+@@ -1875,7 +1879,7 @@
+     <string name="location_dialog_cancel">取消</string>
+     <string name="location_dialog_error_lat">无效纬度</string>
+     <string name="location_dialog_error_lon">无效经度</string>
+-    <string name="location_dialog_error_alt">无效海拔</string>
++    <string name="location_dialog_error_alt">海拔无效</string>
+     <string name="location_dialog_error_name">输入有效地名</string>
+ 
+     <string name="location_dialog_toast_copied">已复制到剪贴板<![CDATA[<br/>]]><xliff:g id="value">%1$s</xliff:g></string>
+@@ -1999,7 +2003,7 @@
+     ]]></string>
+     <string name="about_app_donate_field"><![CDATA[
+         %1$s 免费使用，如果您认为它有价值，请
+-        <a href="%2$s">随意付费</a>。
++        <a href="%2$s">按意愿付费</a>。
+     ]]></string>
+     <string name="about_app_sourcecode_field"><![CDATA[
+         <b>源代码:</b><br />
+@@ -2031,7 +2035,7 @@
+     <string name="privacy_policy0"><![CDATA[<b>隐私:</b><br/>Suntimes 不会收集、储存、传输个人用户数据。它<b>没有广告</b>，<b>没有用户分析</b>，<b>没有跟踪器</b>，并且<b>不使用不必要的权限</b>。]]></string>
+     <string name="privacy_policy"><![CDATA[<b>隐私:</b><br/>Suntimes 不会收集、储存、传输个人用户数据。它<b>没有广告</b>，<b>没有用户分析</b>，<b>没有跟踪器</b>，并且<b>不使用不必要的权限</b>。<br/><br/>本应用使用位置信息来配置。位置信息 (和其他用来配置本应用的数据) 保存在本机并且不会离开本机。<br/><br/><xliff:g id="permissionsExplained">%1$s</xliff:g>]]></string>
+     <string name="privacy_permission_location"><![CDATA[Suntimes 使用<b>位置</b>权限以确认您当前的经纬度。<br/><br/>此权限是可选的；位置默认可被手动配置。]]></string>
+-    <string name="privacy_permission_storage"><![CDATA[Suntimes 使用<b>外部存储</b>权限以备份/导出数据到文档中 (例如: 地点、主题)。]]></string>
++    <string name="privacy_permission_storage"><![CDATA[Suntimes 使用<b>外部存储</b>权限将数据备份/导出到文件（例如：地点、主题）。]]></string>
+     <string name="privacy_permission_storage1"><![CDATA[Suntimes Alarms 使用<b>外部存储</b>权限以播放位于SD卡中的声音。<br/><br/>此权限是可选的；如果访问被拒绝将播放默认声音。系统声音不需要此权限 (媒体存储)。]]></string>
+     <string name="privacy_permission_dnd"><![CDATA[Suntimes 需要<b>勿扰访问权限</b>以在就寝时间时间更改设置。]]></string>
+     <string name="privacy_permissiondialog_prompt"><![CDATA[现在请求权限?]]></string>
+@@ -2076,13 +2080,13 @@
+     <string name="action_date">日期</string>    <!-- checkbox label -->
+     <string name="action_lightGraph">光照图表</string>
+     <string name="action_preview">预览</string>
+-    <string name="action_seek">寻觅</string>    <!-- checkbox label -->
+-    <string name="action_seekDate">寻觅日期</string>    <!-- checkbox label -->
+-    <string name="action_seekDawn">寻觅黎明</string>    <!-- checkbox label -->
+-    <string name="action_seekDusk">寻觅黄昏</string>    <!-- checkbox label -->
+-    <string name="action_seekNoon">寻觅正午</string>    <!-- checkbox label -->
+-    <string name="action_seekShadowLength">寻觅影子长度</string>    <!-- checkbox label -->
+-    <string name="action_seekTime">寻觅时间</string>    <!-- checkbox label -->
++    <string name="action_seek">跳转到</string>    <!-- checkbox label -->
++    <string name="action_seekDate">跳转到日期</string>    <!-- checkbox label -->
++    <string name="action_seekDawn">跳转到黎明</string>    <!-- checkbox label -->
++    <string name="action_seekDusk">跳转到黄昏</string>    <!-- checkbox label -->
++    <string name="action_seekNoon">跳转到正午</string>    <!-- checkbox label -->
++    <string name="action_seekShadowLength">跳转到影长</string>    <!-- checkbox label -->
++    <string name="action_seekTime">跳转到时间</string>    <!-- checkbox label -->
+     <string name="action_sort">排序</string>
+     <string name="action_time">时间</string>    <!-- checkbox label -->
+     <string name="actions_hint_actionid">ID</string>
+@@ -2128,7 +2132,7 @@
+     <string name="event_shadowratio_title">阴影比例</string>    <!-- (custom) shadow ratio event title; e.g. "Shadow Ratio x2" -->
+     <string name="event_sunevent_summary_format1">%3$s 的 %2$s %1$s</string>    <!-- (custom) sun event summary; e.g. "5m before/after Sun 6°" -->
+     <string name="events_action_addEvent_dayPercentEvent">添加 (昼/夜比例)</string>    <!-- button (contentDescription) -->
+-    <string name="events_action_addEvent_moonEvent">添加 (月亮高度)</string>    <!-- button (contentDescription) -->
++    <string name="events_action_addEvent_moonEvent">添加（月亮高度角）</string>    <!-- button (contentDescription) -->
+     <string name="events_action_addEvent_moonIllumEvent">添加 (月球照光照)</string>    <!-- button (contentDescription) -->
+     <string name="events_action_addEvent_shadowRatio">添加 (阴影比例)</string>    <!-- button (contentDescription) -->
+     <string name="events_editevent_dialog_factor">阴影系数</string>
+@@ -2199,10 +2203,10 @@
+     <string name="timeMode_midnight">太阳子夜</string>    <!-- setting -->
+     <string name="timeMode_midnight_short">子夜</string>    <!-- setting -->
+     <string name="timeMode_midnightsun">极昼 (午夜太阳)</string>    <!-- a label (not an actual timeMode setting) -->
+-    <string name="timeMode_midnighttwilight">午夜曙暮光</string>    <!-- a label (not an actual timeMode setting) -->
++    <string name="timeMode_midnighttwilight">午夜晨昏蒙影</string>    <!-- a label (not an actual timeMode setting) -->
+     <string name="timeMode_midnighttwilight_whitenight">白夜</string>    <!-- a label (not an actual timeMode setting) -->
+-    <string name="timeMode_moon_midnight">太阴子夜</string>    <!-- setting -->
+-    <string name="timeMode_moon_noon">太阴正午</string>    <!-- setting -->
++    <string name="timeMode_moon_midnight">月球午夜</string>    <!-- setting -->
++    <string name="timeMode_moon_noon">月球中天</string>    <!-- setting -->
+     <string name="timeMode_polarnight">极夜</string>    <!-- a label (not an actual timeMode setting) -->
+     <string name="timedialog_action_addTime_days">天</string>    <!-- + days -->
+     <string name="timedialog_action_addTime_hours">小时</string>    <!-- + hours -->
+--- a/app/src/main/res/values-zh-rCN/help_content.xml
++++ b/app/src/main/res/values-zh-rCN/help_content.xml
+@@ -152,7 +152,7 @@
+         <b>蓝色时刻:</b> 太阳在地平线以下8度到4度之间。 蓝色时刻开始和结束于航海曙暮光和民用曙暮光之间。<br/>
+     ]]></string>
+     <string name="help_action_launch"><![CDATA[
+-        所有字段均为可选。（如值为空则使用默认意图）
++        所有字段均为可选。（如值为空则使用隐式意图）
+         <br/>
+         <br/>
+         <b>动作:</b> 动作字符串。<br/><small>如 <em>android.intent.action.VIEW</em></small>
