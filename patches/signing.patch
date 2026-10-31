@@ -1,0 +1,31 @@
+--- a/app/build.gradle
++++ b/app/build.gradle
+@@ -50,6 +50,20 @@
+         }
+     }
+ 
++    signingConfigs {
++        selfuse {
++            def kp = new Properties()
++            def kf = rootProject.file('key.properties')
++            if (kf.exists()) { kf.withInputStream { kp.load(it) } }
++            if (kp.getProperty('storeFile')) {
++                storeFile file(kp.getProperty('storeFile'))
++                storePassword kp.getProperty('storePassword')
++                keyAlias kp.getProperty('keyAlias')
++                keyPassword kp.getProperty('keyPassword')
++            }
++        }
++    }
++
+     defaultConfig
+     {
+         applicationId "com.forrestguice.suntimeswidget"
+@@ -116,6 +130,7 @@
+         }
+         release
+         {
++            signingConfig signingConfigs.selfuse
+             minifyEnabled true
+             shrinkResources true
+             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
