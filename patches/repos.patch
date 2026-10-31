@@ -1,0 +1,20 @@
+--- a/build.gradle
++++ b/build.gradle
+@@ -2,7 +2,7 @@
+ {
+     repositories
+     {
+-        maven { url "https://maven.google.com/" }
++        maven { url "https://dl.google.com/dl/android/maven2/" }  // abuild: google 别名在集群隧道内不可达
+         mavenCentral()
+     }
+     dependencies
+@@ -35,7 +35,7 @@
+ {
+     repositories
+     {
+-        maven { url "https://maven.google.com/" }
++        maven { url "https://dl.google.com/dl/android/maven2/" }  // abuild: google 别名在集群隧道内不可达
+         mavenCentral()
+     }
+ }
